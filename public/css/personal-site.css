@@ -1,0 +1,23 @@
+
+
+.placement {
+	float: right;
+}
+
+div.container-fluid {
+	background-color: #2992B2
+}
+
+ .navbar-default .navbar-nav>li>a {
+	color: white;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+body {
+	 margin: 0;
+	 background-image: url("../img/gplaypattern_@2X.png");
+	 background-repeat:repeat;
+ }
