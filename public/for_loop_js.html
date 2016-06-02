@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>For Loop JS</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			console.log("Exercise 1");
+			var message;
+				for (var i = 1; i <= 10; i++) 
+				{
+					message = "";
+					for (var j = 1; j <= i; j++) 
+					{
+							if (i == 10) 
+							{
+								message = message + 0;
+							}
+							else 
+							{
+								message = message + 1;
+							}
+					}
+						console.log(message)
+				}
+			console.log("                         ");			
+			console.log("this is a break");
+			console.log("                         ");
+			console.log("Exercise 2");
+			console.log("                         ");
+
+			var randomNumber = Math.floor(Math.random() * 10) +1;
+			for (var i = 1; i <= 10; i++) {
+				var product = randomNumber * i;
+				console.log(randomNumber + "x" + i + "=" + product);
+			}
+
+
+			console.log("                         ");			
+			console.log("this is a break");
+			console.log("                         ");
+			console.log("Exercise 3");
+			console.log("                         ");
+
+			for (var i = 0; i < 10; i++) {
+				var randomNumber = Math.floor(Math.random() * 180) +20;
+				var message = (randomNumber % 2 == 0) ? randomNumber + " is even" : randomNumber + " is odd";
+				console.log(message);
+			}
+
+
+
+			console.log("                         ");			
+			console.log("this is a break");
+			console.log("                         ");
+			console.log("Exercise 4");
+			console.log("                         ");
+
+
+			for (var num = 100; num >= 5; num = num - 5) {
+				console.log(num);
+			}
+
+
+			console.log("                         ");
+			console.log("Finished");
+			console.log("                         ");
+		</script>
+	</body>
+</html>
