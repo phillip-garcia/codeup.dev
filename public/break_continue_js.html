@@ -11,9 +11,8 @@
 			}while (random % 2 == 0);
 
 			console.log("Random odd number to skip is: " + random);
-			for (var i = 1; i < 100; i++) {
+			for (var i = 1; i < 50; i++) {
 				if (i % 2 === 0) {
-					//skip the even numbers.
 					continue;
 				}
 				if (random === i) {
@@ -21,7 +20,7 @@
 				} else {
 					console.log("Here is an odd Number: " +i);
 				}			
-				if (i >= 49) {
+				if (i > 50) {
 					break;
 				}
 			}
