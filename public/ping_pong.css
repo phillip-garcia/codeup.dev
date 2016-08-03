@@ -1,0 +1,171 @@
+
+.ball {
+	width: 50px;
+	height: 50px;
+	background: papayawhip;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 50px;
+	margin-left: 45px;
+	margin-top: 2px;
+	visibility: hidden;
+}
+
+#scoreBox{
+	height: 80px;
+	width: 100px;
+	background-color: grey;
+	float:left;
+}
+.possibleFields {
+    border-style: solid;
+    border-width: 1px;
+/*    height: 50px;
+    width: 100px;*/
+}
+.collumns {
+	float: left;
+}
+#playingField {
+	margin-top: 2%;
+	margin-left: 22%;
+	float: left;
+}
+#pingPang {
+	font-size: 80px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	margin-bottom: -1%;
+	margin-top: 3%;
+}
+#pingPong {
+	font-size: 80px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	margin-bottom: -1%;
+	margin-top: 3%;
+}
+#table {
+    border-bottom: 255px solid green;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    height: 0;
+    width: 775px;
+    margin-top: 30%;
+    margin-left: -9%;
+    float: left;
+}
+#table2 {
+    border-bottom: 252px solid white;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    height: 0;
+    width: 628px;
+    margin-top: 20%;
+    margin-left: -9%;
+    float: left;
+}
+#net {
+    border-style: solid;
+    border-color: blue;
+    border-width: 3px;
+    float: left;
+    margin-top: -28%;
+    margin-left: -3%;
+    width: 655px;
+    height: 40px;
+    float: left;
+}
+#net_rail1 {
+	background-color: blue;
+	width: 6px;
+	height: 40px;
+	float: left;
+}
+#net_rail2 {
+	background-color: blue;
+	width: 6px;
+	height: 40px;
+	float: right;
+	margin-top: -40px;
+}
+.net_columns {
+	background-color: black;
+	width: 2px;
+	height: 40px;
+	margin-left: 2px;
+	float: left;
+}
+#lastCollumn{
+	margin-right: 3px;
+}
+#grid {
+	margin-top: -55%;
+	float: left;
+}
+#netRow1 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -38px;
+	margin-left: 5px;
+}
+#netRow2 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -33px;
+	margin-left: 5px;
+}
+#netRow3 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -28px;
+	margin-left: 5px;
+}
+#netRow4 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -23px;
+	margin-left: 5px;
+}
+#netRow5 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -18px;
+	margin-left: 5px;
+}
+#netRow6 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -13px;
+	margin-left: 5px;
+}
+#netRow7 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -8px;
+	margin-left: 5px;
+}
+#netRow8 {
+	float: left;
+	background-color: black;
+	height: 2px;
+	width:650px;
+	margin-top: -3px;
+	margin-left: 5px;
+}

@@ -3,35 +3,46 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Calculator</title>
-		<link 
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-			href="/css/calculator.css"
-		>
+		<link rel="stylesheet" href="css/calculator.css">
 	</head>
 	<body>
 	<h1>Calculator</h1>
-	<div class="contatiner">
+	<div id="calcContatiner">
 		<div class="inputs">
-			<input type="text" id="firstNumber">
-			<input type="text" id="operator">
-			<input type="text" id="secondNumber">
+			<input type="text" id="firstNumber" id="answer" class="dataInputs">
+			<input type="text" id="operator" class="dataInputs">
+			<input type="text" id="secondNumber" class="dataInputs">
 		</div>
 		<div id="numberAndOperatorButtons">
-			<button type="button" id="btn1" class="numberButtons">1</button>
-			<button type="button" id="btn2" class="numberButtons">2</button>
-			<button type="button" id="btn3" class="numberButtons">3</button>
-			<button type="button" id="btn4" class="numberButtons">4</button>
-			<button type="button" id="btn5" class="numberButtons">5</button>
-			<button type="button" id="btn6" class="numberButtons">6</button>
-			<button type="button" id="btn7" class="numberButtons">7</button>
-			<button type="button" id="btn8" class="numberButtons">8</button>
-			<button type="button" id="btn9" class="numberButtons">9</button>
-			<button type="button" id="btn0" class="numberButtons">0</button>
-			<button type="button" id="btn+" class="operatorButtons">+</button>
-			<button type="button" id="btn-" class="operatorButtons">-</button>
-			<button type="button" id="btnx" class="operatorButtons">x</button>
-			<button type="button" id="btn/" class="operatorButtons">/</button>
-			<button type="button" id="btn=" class="operatorButtons">=</button>
+			<div id="row1">
+				<button type="button" id="clearButton" class="topOperators calcBtn">C</button>
+				<button type="button" id="negativePositiveButton" data-value="" class="topOperators calcBtn">+/-</button>
+				<button type="button" id="percentButton" class="topOperators calcBtn">%</button>
+				<button type="button" class="operatorButtons calcBtn" data-value="/">/</button>
+			</div>
+			<div id="row2">
+				<button type="button" data-value= "7" class="numberButton calcBtn">7</button>
+				<button type="button" data-value= "8" class="numberButton calcBtn">8</button>
+				<button type="button" data-value= "9" class="numberButton calcBtn">9</button>	
+				<button type="button" class="operatorButtons calcBtn" data-value="*">x</button>
+			</div>
+			<div id="row3">
+				<button type="button" data-value= "4" class="numberButton calcBtn">4</button>
+				<button type="button" data-value= "5" class="numberButton calcBtn">5</button>
+				<button type="button" data-value= "6" class="numberButton calcBtn">6</button>
+				<button type="button" class="operatorButtons calcBtn" data-value="-">-</button>
+			</div>
+			<div id="row5">
+				<button type="button" data-value= "1" class="numberButton calcBtn">1</button>
+				<button type="button" data-value= "2" class="numberButton calcBtn">2</button>
+				<button type="button"  data-value= "3" class="numberButton calcBtn">3</button>
+				<button type="button" data-value="+" class="operatorButtons calcBtn">+</button>
+			</div>
+			<div id="row5">
+				<button type="button" data-value= "0" class="numberButton calcBtn" id="zero">0</button>
+				<button type="button" id="decimalBtn" class="calcBtn">.</button>
+				<button type="button" id="=btn" class="calcBtn">=</button>
+			</div>
 		</div>
 	</div>
 	<script src ="js/calculator.js"></script>

@@ -1,0 +1,16 @@
+#container {
+    width: 0px;
+    height: 0px;
+    border-right: 310px solid transparent;
+    border-top: 100px solid red;
+    border-left: 15px solid red;
+    border-bottom: 100px solid red;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 60px;
+}
+#login {
+      margin-top: -46px;
+      margin-left: 140px;
+}

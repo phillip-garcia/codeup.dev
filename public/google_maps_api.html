@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Maps</title>
+	<style>
+		#map1 {
+			height: 400px;
+			width: 400px;
+			margin: 5px;
+		}
+		#map2 {
+			height: 400px;
+			width: 400px;
+			margin: 5px;
+		}
+		#map3 {
+			height: 400px;
+			width: 400px;
+			margin: 5px;
+		}
+	</style>
+</head>
+	<body>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvcs2BqaJY279saNvCSXuX3DO1ZUA-pe4"></script>
+		<h1>My Favorite Restaurants!</h1>
+		<div class="container">
+			<h3>Fujiya</h3>
+			<div id=column1>
+				<h4>Zoom</h4>
+				<button class="fujiyaBtn5 button">5</button>
+				<button class="fujiyaBtn15 button">15</button>
+				<button class="fujiyaBtn20 button">20</button>
+			</div>
+			<div id=column2>
+			<div id=map1></div>
+				<script type="text/javascript">
+				var address1 = "9030 Wurzbach Rd, San Antonio, TX, 78240";
+				var geocoder = new google.maps.Geocoder();
+				geocoder.geocode({ "address": address1 }, function(results, status) {
+				   if (status == google.maps.GeocoderStatus.OK) {
+					   map1.setCenter(results[0].geometry.location);
+				   } else {
+					   alert("Geocoding was not successful - STATUS: " + status);
+				   }
+				});
+					var mapOptions = {
+						zoom: 15,
+						center: {
+							lat:  29.526120,
+							lng: -98.566543
+						}
+					};
+				var map1 = new google.maps.Map(document.getElementById("map1"), mapOptions);
+				var fujiya = { lat: 29.526120, lng: -98.566543 };
+				var marker = new google.maps.Marker({
+					position: fujiya,
+					map: map1
+				});	
+				var infowindow = new google.maps.InfoWindow({
+				    content: "Fujiya! They have okinamamiyaki!"
+				});
+				infowindow.open(map1, marker);			
+				</script>
+			</div>
+		</div>
+				<div class="container">
+				<h3>Dave's Cosmic Subs</h3>
+			<div id=column1>
+				<h4>Zoom</h4>
+				<button class="davesBtn5 button">5</button>
+				<button class="davesBtn15 button">15</button>
+				<button class="davesBtn20 button">20</button>
+			</div>
+			<div id=column2>
+			<div id=map2></div>
+				<script type="text/javascript">
+					"use strict";
+
+						var mapOptions = {
+							zoom: 15,
+							center: {
+								lat:  29.654066,
+								lng: -98.447923
+							}
+						};
+				var map2 = new google.maps.Map(document.getElementById("map2"), mapOptions);
+				var daves = { lat: 29.654066, lng: -98.447923 };
+					var marker = new google.maps.Marker({
+						position: daves,
+						map: map2
+					});
+				var infowindow = new google.maps.InfoWindow({
+				    content: "Dave's Cosimc Subs is the best!"
+				});
+				infowindow.open(map2, marker);	
+					</script>
+			</div>
+		</div>
+				<div class="container">
+				<h3>Bakery Lorraine</h3>
+			<div id=column1>
+				<h4>Zoom</h4>
+				<button class="blBtn5 button">5</button>
+				<button class="blBtn15 button">15</button>
+				<button class="blBtn20 button">20</button>
+			</div>
+			<div id=column2>
+			<div id=map3></div>
+				<script type="text/javascript">
+				"use strict";
+						var mapOptions = {
+							zoom: 15,
+							center: {
+								lat:  29.442535,
+								lng: -98.479994
+							}
+						};
+				var map3 = new google.maps.Map(document.getElementById("map3"), mapOptions);
+					var bakeryLorraine = { lat: 29.442535, lng: -98.479994 };
+					var marker = new google.maps.Marker({
+						position: bakeryLorraine,
+						map: map3
+					});				
+					var infowindow = new google.maps.InfoWindow({
+				    	content: "Lorraine's has really good pastries."
+					});
+					infowindow.open(map3, marker);	
+				</script>
+			<script src="js/google_maps_api.js"></script>
+			</div>
+		</div>
+	</body>
+</html>

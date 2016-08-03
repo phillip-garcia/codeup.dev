@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather Map</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/weather_app.css">
+	</head>
+	<body>
+	<div id=container>
+		<h1>Weather Application</h1>
+		<h3>San Antonio:</h3>
+		<div class="row"></div>
+		<div id="map"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvcs2BqaJY279saNvCSXuX3DO1ZUA-pe4"></script>-->
+		<script>
+			"use strict"
+			$.get("http://api.openweathermap.org/data/2.5/forecast/daily?id=4726206&cnt=3", {
+				APPID: "445a100d2b1796762b887d09a117252c",
+				q:     "San Antonio, TX",
+				units: "imperial"
+			}).done(function(forecast) {
+				console.log(forecast);
+				forecast.list.forEach(function(weather) {
+					var highTemp = weather.temp.max;
+					var lowTemp = weather.temp.min;
+					var humidity = weather.humidity;
+					var clouds = weather.clouds;
+					var wind = weather.speed;
+					var pressure = weather.pressure;
+					var description = weather.weather[0].description; 
+					var main = weather.weather.main;
+				$('.row').append('<div class=\"day\">High/Low: ' + highTemp.toFixed(0) + ' / ' + lowTemp.toFixed(0) + "<p>" + description + "<p>" + "Humidity: " + humidity + "<p>" + 'wind: ' + wind.toFixed(0) + "<p>" + 'Pressure: ' + pressure + '</div>')
+				});
+			});
+		</script>
+			<script>
+			  function initMap() {
+				var map = new google.maps.Map(document.getElementById('map'), {
+				  zoom: 8,
+				  center: {lat: -34.397, lng: 150.644}
+				});
+				var geocoder = new google.maps.Geocoder();
+
+				document.getElementById('submit').addEventListener('click', function() {
+				  geocodeAddress(geocoder, map);
+				});
+			  }
+			function geocodeAddress(geocoder, resultsMap) {
+				var address = document.getElementById('address').value;
+				geocoder.geocode({'address': address}, function(results, status) {
+				  if (status === google.maps.GeocoderStatus.OK) {
+					resultsMap.setCenter(results[0].geometry.location);
+					var marker = new google.maps.Marker({
+						map: resultsMap,
+						position: results[0].geometry.location
+					});
+				  } else {
+					alert('Geocode was not successful for the following reason: ' + status);
+				  }
+				});
+			}
+			geocodeAddress()
+			</script>
+			<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvcs2BqaJY279saNvCSXuX3DO1ZUA-pe4callback=initMap">
+			</script>
+	</div>
+	</body>
+</html>

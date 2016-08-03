@@ -15,7 +15,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="resume.html">Resume</a></li> 
 				<li><a href="portfolio.html">Portfolio</a></li> 
-				<li><a href="login-2.0.php">Login</a></li> 
+				<li><a href="login.php">Login</a></li> 
 				<li><a href="register.php">Register</a></li>
 				<li><a href="contact.php">Contact</a></li>			
 			</ul>

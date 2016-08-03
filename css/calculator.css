@@ -1,0 +1,23 @@
+#calcContatiner {
+	height: 300px;
+	width: 450px;
+	background-color: #72B229;
+	border: solid, black;
+}
+.calcBtn {
+	height: 45px;
+	width: 23%;
+	margin: .6%;
+}
+.dataInputs{
+	height: 30px;
+	margin: 2px;
+	width: 35%;
+	margin: 1%;
+}
+#operator {
+	width: 18%
+}
+#zero {
+	width:48%;
+}

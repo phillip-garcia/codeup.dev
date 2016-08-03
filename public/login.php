@@ -1,50 +1,58 @@
 <?php
-  var_dump($_GET);
-  var_dump($_POST);
+require_once 'functions.php';
+function pageController() {
+    session_start();
+    $data = ['message' => '', 'title' => 'Login'];
+    if (isUserAuthenticated()) {
+        redirect('authorized.php');
+    }
+    if (!isPost()) {
+        return $data;
+    }
+    if (authenticate(input('username'), input('password'))) {
+        redirect('authorized.php');
+    }
+    $data['message'] = 'Your username or password are incorrect...';
+    return $data;
+}
+extract(pageController());
 ?>
-
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Login</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/personal-site.css ">
-	</head>
-	<body class="background">
-		<nav class="navbar-default">
-		  <div class="container-fluid">
-			<div class="navbar-header">
-			  <a class="navbar-brand" href="welcom.php">Phillip Thomas Garcia</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="resume.html">Resume</a></li> 
-				<li><a href="portfolio.html">Portfolio</a></li> 
-				<li><a href="login-2.0.php">Login</a></li> 
-				<li><a href="register.php">Register</a></li>
-				<li><a href="contact.php">Contact</a></li>			
-			</ul>
-			<div class="placement">
-				<form class="navbar-form navbar-left" role="search">
-			  	<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search">
-				</div>
-			  	<button type="submit" class="btn btn-default">Submit</button>
-				</form>
-			</div>
-		  </div>
-		</nav>
-	<div id="fullscreen_bg" class="fullscreen_bg"/>
-
-	<div class="container">
-
-   		<form class="form-signin">
-			<h1 class="form-signin-heading text-muted">Sign In</h1>
-			<input type="text" class="form-control" placeholder="Email address" required="" autofocus="">
-			<input type="password" class="form-control" placeholder="Password" required="">
-			<button class="btn btn-lg btn-primary btn-block" type="submit">
-				Sign In
-			</button>
-		</form>
-	</div>
-	</body>
+    <?php include 'header.php' ?>
+    <body>
+        <div class="container">
+            <h1>Login</h1>
+            <h2><?= $message ?></h2>
+            <form method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
